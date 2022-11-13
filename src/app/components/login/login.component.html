@@ -1,0 +1,30 @@
+<h1 class="header">COMPANY CRM</h1>
+
+<h5>login with your account</h5>
+
+<form class="container">
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input required email ngModel name="email" #email="ngModel" type="email"
+       class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+       (keyup)="emailKey(email.value)">
+
+      <div class="alert alert-danger" *ngIf="email.touched && !email.dirty">you must fill the email field</div>
+      <div class="alert alert-danger" *ngIf="email.errors?.['email'] && email.touched"> must be a valid email</div>
+
+    </div>
+
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input ngModel required minlength="6" #password ='ngModel'
+      type="password" name="password" class="form-control" id="exampleInputPassword1"
+      (keyup)="passwordKey(password.value)">
+    </div>
+    
+    <div class="alert alert-danger" *ngIf="password.touched && !password.dirty">you must fill the password field</div>
+    <div class="alert alert-danger" *ngIf="password.errors?.['minlength'] && email.touched"> the password must be at least 6 characters</div>
+
+    <button (click)="login()" type="submit" class="btn btn-primary">Submit</button>
+  </form>

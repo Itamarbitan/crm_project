@@ -1,0 +1,35 @@
+<header class="h1 mb-5 mt-2"> Add customer </header>
+
+
+
+<form>
+    <div class="container">
+        <div class="row">
+            <div class="form-group col">
+                <label for="fname">First name</label>
+                <input type="text" class="form-control" id="fname" name="fname" #fname placeholder="First name">
+            </div>
+            <div class="form-group col">
+                <label for="lname">Last name</label>
+                <input type="text" class="form-control" id="lname" name="lname" #lname placeholder="Last name">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" name="email" #email placeholder="text@domain.com">
+            </div>
+            <div class="form-group col">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone" name="phone" #phone placeholder="05x-xxx-xxxx">
+            </div>
+        </div>
+
+        <button (click)="buildAndSaveObj(fname.value, lname.value, email.value, phone.value)" type="submit" class="btn btn-primary my-4">Add customer</button>
+
+    </div>
+
+
+   
+  </form>
